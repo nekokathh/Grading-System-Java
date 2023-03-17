@@ -20,7 +20,7 @@ public class GradingSystem {
                 continue;
             }
         
-            if (num < 0 || num > 100) {
+            if (num < 0 || num > 90) {
                 System.out.println("Invalid input! Please enter an integer grade between 0 and 100.");
                 continue;
             }
