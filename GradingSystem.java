@@ -35,9 +35,15 @@ public class GradingSystem {
                             case 6:
                                     System.out.println("Your grade is D");
                                     break;
-                            case 4:
+                            
+                            case 5:
+                                    System.out.println("Your grade is E");
+                                    break;
+                            
+                            case 4: 
                                     System.out.println("Your grade is F");
                                     break;
+                                    
                             default:
                                     System.out.println("Your grade is G");
             
