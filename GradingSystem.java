@@ -1,42 +1,56 @@
 import java.util.Scanner;
 
 public class GradingSystem {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.print("Enter your grade: ");
+  
+    public static void main (String args[]){
+        Scanner scanner = new Scanner (System.in);
+        boolean cont = true;
+        while(cont){
+            System.out.println("Enter a grade:");
+        
+            
             String input = scanner.nextLine();
+            if(input.equals("exit")){
+                cont = false;
+            }else{
         
-            if (input.equals("exit")) {
-                break;
-            }
         
-            int num;
-            try {
-                num = Integer.parseInt(input);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input! Please enter an integer grade between 0 and 100.");
-                continue;
-            }
+                int grade = 0;
+                try {
+                
+                    grade = Integer.parseInt(input);
+                    if(grade<=100){
+                        switch(grade/10){
+
+                            case 10:
+                            case 9:
+                                    System.out.println("Your grade is A");
+                                    break;
+                            case 8:
+                                    System.out.println("Your grade is B");
+                                    break;
+                            case 7:
+                                    System.out.println("Your grade is C");
+                                    break;
+                            case 6:
+                                    System.out.println("Your grade is D");
+                                    break;
+                            default:
+                                    System.out.println("Your grade is F");
+            
+                        }
+                     }
+                    else{
+                        System.out.println("Invalid input! Please enter an integer grade between 0 and 100.");
+                    }
+                
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input! Please enter an integer grade between 0 and 100.");
+                
+                }
+         }
         
-            if (num < 0 || num > 90) {
-                System.out.println("Invalid input! Please enter an integer grade between 0 and 100.");
-                continue;
-            }
-        
-            if (num >= 95 && num <= 100) {
-                System.out.println("Your grade is: A");
-            } else if (num >= 85 && num <= 90) {
-                System.out.println("Your grade is: B");
-            } else if (num >= 75 && num <= 80) {
-                System.out.println("Your grade is: C");
-            } else if (num >= 65 && num <= 70) {
-                System.out.println("Your grade is: D");
-            } else {
-                System.out.println("Your grade is: F");
-            }
-        }
-        scanner.close(); 
+    }
+    scanner.close();
     }
 }
